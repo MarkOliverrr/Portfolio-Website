@@ -1,5 +1,5 @@
-// src/App.jsx
-import React, { useState } from 'react'; // Impor useState
+
+import React, { useState } from 'react'; 
 import Header from './components/Header';
 import Squares from './components/Squares';
 import TextGenerateEffect from "./components/text-generate-effect";
@@ -9,7 +9,7 @@ import Lanyard from './components/Lanyard/Lanyard';
 import Skills from './components/Skills';
 import { ButtonMovingBorder } from './components/MovingBorderButton';
 import { motion } from "framer-motion";
-// Tambahkan FaCube untuk ikon tombol
+
 import { FaGithub, FaInstagram, FaLinkedin, FaDownload, FaBriefcase, FaCode, FaCertificate, FaGlobe, FaArrowRight, FaCube } from 'react-icons/fa';
 import ProfileCard from './components/ProfileCard/ProfileCard';
 import { IconCloud } from './components/IconCloud';
@@ -20,15 +20,15 @@ import Contact from './components/Contact';
 import { NavbarProvider } from './contexts/NavbarContext';
 
 function App() {
-  // 1. State untuk mengontrol visibilitas aset 3D (default: aktif)
+
   const [is3dEnabled, setIs3dEnabled] = useState(true);
 
-  // Fungsi untuk toggle state
+ 
   const toggle3dAssets = () => {
     setIs3dEnabled(prev => !prev);
   };
 
-  // Data untuk card statistik
+ 
   const stats = [
     { icon: <FaCode />, value: "12", title: "TOTAL PROJECTS", description: "Innovative web solutions crafted" },
     { icon: <FaCertificate />, value: "2", title: "CERTIFICATES", description: "Professional skills validated" },
@@ -38,12 +38,12 @@ function App() {
   return (
     <NavbarProvider>
         <div className="relative min-h-screen bg-[#060010] overflow-hidden">
-          {/* LAPISAN 1: BACKGROUND ANIMASI */}
+        
           <div className="absolute inset-0 z-0">
             <Squares speed={0.3} squareSize={35} direction="diagonal" borderColor="rgba(255, 255, 255, 0.03)" hoverFillColor="rgba(31, 137, 187, 0.53)" />
           </div>
           
-          {/* 2. Tombol untuk mengaktifkan/menonaktifkan aset 3D */}
+       
           <button
             onClick={toggle3dAssets}
             title={`Toggle 3D Assets (${is3dEnabled ? 'On' : 'Off'})`}
@@ -56,16 +56,16 @@ function App() {
             <FaCube className="h-5 w-5" />
           </button>
 
-          {/* HEADER FIXED DI ATAS MAIN */}
+          {/* HEADER */}
           <Header />
 
           {/* MAIN CONTENT */}
           <main className="relative z-10 px-8 max-w-7xl mx-auto">
-            {/* BAGIAN HERO */}
+            {/* HERO */}
             <section id="home" className="flex flex-col md:flex-row items-center gap-10 pt-20 pb-16 lg:pt-0 lg:pb-20">
-              {/* Blok Teks */}
+              {/* Block Text */}
               <div className="flex-1 text-white space-y-6 pt-16 md:pt-40 order-last md:order-none">
-                {/* ... konten teks hero ... */}
+              
                 <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}>
                     <AnimatedGradientTextDemo />
                 </motion.div>
@@ -95,7 +95,7 @@ function App() {
                 </motion.div>
               </div>
 
-              {/* 3. Render Lanyard secara kondisional */}
+              {/*  Render Lanyard */}
               <div className="hidden lg:flex flex-1 justify-center h-[600px] w-full order-first lg:order-none">
                 {is3dEnabled && (
                   <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} fov={18} transparent={true} />
@@ -103,13 +103,13 @@ function App() {
               </div>
             </section>
 
-            {/* BAGIAN ABOUT ME BARU */}
+            {/* ABOUT ME */}
             <section
               id="about"
               className="py-12 md:py-18 gap-0 w-full mx-0 pt-20"
               style={{ width: "100vw", position: "relative", left: "50%", right: "50%", marginLeft: "-50vw", marginRight: "-50vw" }}
             >
-              {/* ... Judul "ABOUT ME" ... */}
+              {/* ...  "ABOUT ME" ... */}
               <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }} className="text-center">
                     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden mb-20">
                         <VelocityScroll defaultVelocity={3} numRows={1} className="max-w-full">
@@ -131,7 +131,7 @@ function App() {
                 </motion.div>
 
               <div className="flex flex-col md:flex-row items-center justify-center">
-                {/* 3. Render Spline secara kondisional */}
+                {/* .Render Spline */}
                 {is3dEnabled && (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -146,14 +146,13 @@ function App() {
                   </motion.div>
                 )}
 
-                {/* KANAN: Teks & Tombol */}
-                {/* 4. Sesuaikan lebar kolom teks secara dinamis */}
+             
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.9, ease: "easeOut" }}
-                  // Lebar berubah jika 3D dinonaktifkan
+                
                   className={`text-white text-center md:text-left px-4 md:px-8 transition-all duration-700 ${is3dEnabled ? 'md:w-1/2' : 'md:w-2/3'}`}
                 >
                   <p className="text-2xl text-gray-300 font-moderniz my" style={{ textShadow: "2px 2px 0 #000754, 4px 4px 0 #4079ff, 0 4px 12px #40ffaa, 0 1px 0 #00ffdc" }}>Hello, I'm</p>
@@ -174,7 +173,7 @@ I am a Bachelor of Science in Information Technology graduate at Central Luzon S
                 </motion.div>
               </div>
               
-              {/* ... Statistik ... */}
+            
               <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-10 px-4 md:px-0">
                 {stats.map((stat, index) => (
                   <div key={index} className="group relative p-6 rounded-2xl bg-gradient-to-br from-slate-900/80 to-slate-950/70 border border-slate-800/80 shadow-lg transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_0_24px_0px_#00ffdc50] cursor-pointer">
@@ -196,12 +195,12 @@ I am a Bachelor of Science in Information Technology graduate at Central Luzon S
               </motion.div>
             </section>
 
-            {/* BAGIAN PROJECTS */}
+            {/* PROJECTS */}
             <section id="projects" className="md:py-18">
               <ProjectSection />
             </section>
 
-            {/* BAGIAN CONTACT */}
+            {/* CONTACT */}
             <Contact />
 
             {/* FOOTER */}
