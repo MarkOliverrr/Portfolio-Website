@@ -15,11 +15,11 @@ import {
 } from 'react-icons/fa';
 import { SiTiktok } from 'react-icons/si';
 
-// JSON file untuk menyimpan comments
+// JSON file  comments
 const COMMENTS_FILE = '/comments.json';
 
 const Contact = () => {
-  // States untuk contact form
+  // States contact form
   const [contactForm, setContactForm] = useState({
     name: '',
     email: '',
@@ -27,7 +27,7 @@ const Contact = () => {
   });
   const [isSubmittingContact, setIsSubmittingContact] = useState(false);
 
-  // States untuk comments
+  // States comments
   const [commentForm, setCommentForm] = useState({
     name: '',
     message: '',
@@ -37,7 +37,7 @@ const Contact = () => {
   const [comments, setComments] = useState([]);
   const [isSubmittingComment, setIsSubmittingComment] = useState(false);
 
-  // Load comments dari localStorage (simulasi JSON file)
+  // Load comments from localStorage (JSON file)
   useEffect(() => {
     const savedComments = localStorage.getItem('portfolioComments');
     if (savedComments) {
@@ -50,7 +50,7 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmittingContact(true);
     
-    // Save message to localStorage (simulasi JSON file)
+    // Save message to localStorage (JSON file)
     const newMessage = {
       id: Date.now(),
       name: contactForm.name,
@@ -65,7 +65,7 @@ const Contact = () => {
     const updatedMessages = [newMessage, ...messages];
     localStorage.setItem('portfolioContactMessages', JSON.stringify(updatedMessages));
     
-    // Simulasi pengiriman email
+    // simulate sending email
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     alert('Message sent successfully! Thank you for contacting me.');
