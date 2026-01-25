@@ -136,7 +136,7 @@ const handleDeleteComment = (commentId) => {
     {
       name: 'GitHub',
       icon: <FaGithub />,
-      url: '',
+      url: 'https://github.com/MarkOliverrr',
       color: 'from-gray-600 to-gray-800',
       hoverColor: 'hover:shadow-gray-500/25'
     },
