@@ -146,15 +146,7 @@ const handleDeleteComment = (commentId) => {
       url: 'https://www.instagram.com/_mrkolvr/',
       color: 'from-pink-500 to-purple-600',
       hoverColor: 'hover:shadow-pink-500/25'
-    },
-    {
-      name: 'TikTok',
-      icon: <SiTiktok />,
-      url: 'https://www.tiktok.com/@precalsucks',
-      color: 'from-black to-red-600',
-      hoverColor: 'hover:shadow-red-500/25'
-    }
-  ];
+    };
 
   return (
     <section id="contact" className="py-20 px-4 relative overflow-hidden">
