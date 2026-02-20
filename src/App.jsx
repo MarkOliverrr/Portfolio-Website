@@ -1,5 +1,5 @@
 // src/App.jsx
-import React, { useState } from 'react'; // Impor useState
+import React, { useState } from 'react';
 import Header from './components/Header';
 import Squares from './components/Squares';
 import TextGenerateEffect from "./components/text-generate-effect";
@@ -9,7 +9,6 @@ import Lanyard from './components/Lanyard/Lanyard';
 import Skills from './components/Skills';
 import { ButtonMovingBorder } from './components/MovingBorderButton';
 import { motion } from "framer-motion";
-// Tambahkan FaCube untuk ikon tombol
 import { FaGithub, FaInstagram, FaLinkedin, FaDownload, FaBriefcase, FaCode, FaCertificate, FaGlobe, FaArrowRight, FaCube } from 'react-icons/fa';
 import ProfileCard from './components/ProfileCard/ProfileCard';
 import { IconCloud } from './components/IconCloud';
@@ -20,15 +19,12 @@ import Contact from './components/Contact';
 import { NavbarProvider } from './contexts/NavbarContext';
 
 function App() {
-  // 1. State untuk mengontrol visibilitas aset 3D (default: aktif)
   const [is3dEnabled, setIs3dEnabled] = useState(true);
 
-  // Fungsi untuk toggle state
   const toggle3dAssets = () => {
     setIs3dEnabled(prev => !prev);
   };
 
-  // Data untuk card statistik
   const stats = [
     { icon: <FaCode />, value: "12", title: "TOTAL PROJECTS", description: "Innovative web solutions crafted" },
     { icon: <FaCertificate />, value: "2", title: "CERTIFICATES", description: "Professional skills validated" },
@@ -153,7 +149,6 @@ function App() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.9, ease: "easeOut" }}
-                  // Lebar berubah jika 3D dinonaktifkan
                   className={`text-white text-center md:text-left px-4 md:px-8 transition-all duration-700 ${is3dEnabled ? 'md:w-1/2' : 'md:w-2/3'}`}
                 >
                   <p className="text-2xl text-gray-300 font-moderniz my" style={{ textShadow: "2px 2px 0 #000754, 4px 4px 0 #4079ff, 0 4px 12px #40ffaa, 0 1px 0 #00ffdc" }}>Hello, I'm</p>

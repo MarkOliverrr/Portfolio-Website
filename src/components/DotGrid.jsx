@@ -6,7 +6,6 @@ import { InertiaPlugin } from "gsap/InertiaPlugin";
 
 gsap.registerPlugin(InertiaPlugin);
 
-// Fungsi utilitas untuk membatasi frekuensi pemanggilan fungsi (throttle)
 const throttle = (func, limit) => {
   let lastCall = 0;
   return function (...args) {
@@ -18,7 +17,6 @@ const throttle = (func, limit) => {
   };
 };
 
-// Fungsi untuk mengonversi warna hex ke RGB
 function hexToRgb(hex) {
   const m = hex.match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i);
   if (!m) return { r: 0, g: 0, b: 0 };
@@ -48,7 +46,6 @@ const DotGrid = ({
   const baseRgb = useMemo(() => hexToRgb(baseColor), [baseColor]);
   const activeRgb = useMemo(() => hexToRgb(activeColor), [activeColor]);
 
-  // Membuat path lingkaran untuk efisiensi rendering
   const circlePath = useMemo(() => {
     if (typeof window === "undefined" || !window.Path2D) return null;
     const p = new Path2D();
@@ -56,7 +53,6 @@ const DotGrid = ({
     return p;
   }, [dotSize]);
 
-  // Fungsi untuk membangun grid titik
   const buildGrid = useCallback(() => {
     const wrap = wrapperRef.current;
     const canvas = canvasRef.current;
@@ -92,7 +88,6 @@ const DotGrid = ({
     dotsRef.current = dots;
   }, [dotSize, gap]);
 
-  // Efek render utama (loop animasi)
   useEffect(() => {
     if (!circlePath) return;
     let rafId;
@@ -137,7 +132,6 @@ const DotGrid = ({
     return () => cancelAnimationFrame(rafId);
   }, [proximity, activeRgb, baseRgb, circlePath]);
 
-  // Membangun grid saat komponen dimuat dan saat ukuran jendela berubah
   useEffect(() => {
     buildGrid();
     let ro = null;
@@ -153,7 +147,6 @@ const DotGrid = ({
     };
   }, [buildGrid]);
 
-  // Menangani interaksi mouse
   useEffect(() => {
     const onMove = (e) => {
         if (!canvasRef.current) return;

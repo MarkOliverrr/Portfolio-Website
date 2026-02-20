@@ -226,7 +226,7 @@ const ProfileCardComponent = ({
   const cardStyle = useMemo(
     () =>
     ({
-      "--icon": iconUrl ? `url("${iconUrl}")` : "none", // Memastikan URL dibungkus dengan kutip
+      "--icon": iconUrl ? `url("${iconUrl}")` : "none",
       "--grain": grainUrl ? `url("${grainUrl}")` : "none",
       "--behind-gradient": showBehindGradient
         ? (behindGradient ?? DEFAULT_BEHIND_GRADIENT)

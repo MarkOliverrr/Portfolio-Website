@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-import Preloader from './components/Preloader.jsx'; // Impor Preloader
+import Preloader from './components/Preloader.jsx';
 import './index.css';
 
 /**
@@ -11,11 +11,9 @@ import './index.css';
  */
 
 const Main = () => {
- // State to track whether the preloader is still active
-  const [isLoading, setIsLoading] = useState(true);
+ const [isLoading, setIsLoading] = useState(true);
 
-// Callback function that will be called by the Preloader when its animation is finished
-  const handlePreloaderFinished = () => {
+const handlePreloaderFinished = () => {
     setIsLoading(false);
   };
 
@@ -34,7 +32,5 @@ const Main = () => {
 // Render the Main component into the DOM
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Main />
-  </React.StrictMode>,
+  <Main />
 );
