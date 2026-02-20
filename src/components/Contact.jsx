@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FaGithub, 
   FaInstagram, 
-  FaTiktok, 
+
   FaPaperPlane, 
   FaUser, 
   FaEnvelope, 
@@ -13,13 +13,13 @@ import {
   FaReply,
   FaTrash
 } from 'react-icons/fa';
-import { SiTiktok } from 'react-icons/si';
 
-// JSON file  comments
+
+// JSON file untuk menyimpan comments
 const COMMENTS_FILE = '/comments.json';
 
 const Contact = () => {
-  // States contact form
+  // States untuk contact form
   const [contactForm, setContactForm] = useState({
     name: '',
     email: '',
@@ -27,7 +27,7 @@ const Contact = () => {
   });
   const [isSubmittingContact, setIsSubmittingContact] = useState(false);
 
-  // States comments
+  // States untuk comments
   const [commentForm, setCommentForm] = useState({
     name: '',
     message: '',
@@ -37,7 +37,7 @@ const Contact = () => {
   const [comments, setComments] = useState([]);
   const [isSubmittingComment, setIsSubmittingComment] = useState(false);
 
-  // Load comments from localStorage (JSON file)
+  // Load comments dari localStorage (simulasi JSON file)
   useEffect(() => {
     const savedComments = localStorage.getItem('portfolioComments');
     if (savedComments) {
@@ -50,7 +50,7 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmittingContact(true);
     
-    // Save message to localStorage (JSON file)
+    // Save message to localStorage (simulasi JSON file)
     const newMessage = {
       id: Date.now(),
       name: contactForm.name,
@@ -65,7 +65,7 @@ const Contact = () => {
     const updatedMessages = [newMessage, ...messages];
     localStorage.setItem('portfolioContactMessages', JSON.stringify(updatedMessages));
     
-    // simulate sending email
+    // Simulasi pengiriman email
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     alert('Message sent successfully! Thank you for contacting me.');
@@ -146,7 +146,9 @@ const handleDeleteComment = (commentId) => {
       url: 'https://www.instagram.com/_mrkolvr/',
       color: 'from-pink-500 to-purple-600',
       hoverColor: 'hover:shadow-pink-500/25'
-    };
+    },
+  
+  ];
 
   return (
     <section id="contact" className="py-20 px-4 relative overflow-hidden">

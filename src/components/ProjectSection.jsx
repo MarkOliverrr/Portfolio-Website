@@ -20,6 +20,13 @@ import PhotoshopLogo from '../assets/images/photoshop.png';
 import CanvaLogo from '../assets/images/canva.png';
 import KotlinLogo from '../assets/images/kotlin.png';
 import JavaLogo from '../assets/images/javaa.svg';
+import MSSQLLogo from '../assets/images/mssql.png';
+import CSHAROLogo from '../assets/images/csharp.png';
+import ASPNETLogo from '../assets/images/asp.net.png';
+import VSCODELogo from '../assets/images/vsco.png';
+import VSLogo from '../assets/images/vss.png';
+import LaraveLogo from '../assets/images/laravel.png';
+import BootstrapLogo from '../assets/images/bootstrap.png';
 
 const dummyProjects = [
     {
@@ -85,26 +92,32 @@ const userCertificates = [
 ];
 
 const techStack = {
-    frontend: [
-    { name: "React", icon: <FaReact className="text-[#61DAFB]" /> },
-    { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
-    { name: "JavaScript", icon: <FaJsSquare className="text-[#F7DF1E]" /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#38B2AC]" /> },
+    languages: [
+    
     { name: "HTML5", icon: <FaHtml5 className="text-[#E34F26]" /> },
     { name: "CSS3", icon: <FaCss3Alt className="text-[#1572B6]" /> },
-  ],
-  backend: [
-    { name: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
+    { name: "JavaScript", icon: <FaJsSquare className="text-[#F7DF1E]" /> },
     { name: "Python", icon: <SiPython className="text-[#3776AB]" /> },
     { name: "Php", icon: <SiPhp className="text-[#3776AB]" /> },
-     {name: "Kotlin", icon: <img src={KotlinLogo} alt="Kotlin" className="w-8 h-8" /> },
-      { name: "Java", icon: <img src={JavaLogo} alt="Java" className="w-8 h-8" /> },
+    {name: "Kotlin", icon: <img src={KotlinLogo} alt="Kotlin" className="w-8 h-8" /> },
+    { name: "Java", icon: <img src={JavaLogo} alt="Java" className="w-8 h-8" /> },
+    { name: "C#", icon: <img src={CSHAROLogo} alt="C#" className="w-8 h-8" /> },
+  ],
+"frameworks & libraries": [
+  { name: "React", icon: <FaReact className="text-[#61DAFB]" /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#38B2AC]" /> },
+ { name: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
+ { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
+ { name: "ASP.NET", icon: <img src={ASPNETLogo} alt="ASP.NET" className="w-8 h-8" /> },
+ { name: "Laravel", icon: <img src={LaraveLogo} alt="Laravel" className="w-8 h-8" /> },
+ { name: "Bootstrap", icon: <img src={BootstrapLogo} alt="Bootstrap" className="w-8 h-8" /> },
       
 
   ],
   database: [
     { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
     { name: "PostgreSQL", icon: <SiPostgresql className="text-[#336791]" /> },
+    { name: "MSSQL", icon: <img src={MSSQLLogo} alt="Microsoft SQL Server" className="w-8 h-8" /> }
   ],
   tools: [
     { name: "Git & GitHub", icon: <FaGithub className="text-white" /> },
@@ -113,6 +126,8 @@ const techStack = {
     { name: "FlutterFlow", icon: <img src={FlutterFlowLogo} alt="FlutterFlow" className="w-8 h-8" /> },
      { name: "WordPress", icon: <img src={WordPressLogo} alt="WordPress" className="w-8 h-8" /> },
      { name: "Photoshop", icon: <img src={PhotoshopLogo} alt="Photoshop" className="w-8 h-8" /> },
+     { name: "Visual Studio Code", icon: <img src={VSCODELogo} alt="VS Code" className="w-8 h-8" /> },
+    { name: "Visual Studio", icon: <img src={VSLogo} alt="Visual Studio" className="w-8 h-8" /> },
       { name: "Canva", icon: <img src={CanvaLogo} alt="Canva" className="w-8 h-8" /> },
 
   ],

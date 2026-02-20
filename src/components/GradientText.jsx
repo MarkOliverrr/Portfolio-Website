@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-
+// Definisikan teks yang akan ditampilkan secara bergantian
 const TEXTS_TO_TYPE = ["Front End Developer"];
 
-
+// Komponen utama
 export default function LoopingGradientText({
   className = "",
   colors = ["#ffaa40", "#9c40ff", "#ffaa40"],

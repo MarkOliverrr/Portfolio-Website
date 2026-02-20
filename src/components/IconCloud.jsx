@@ -20,10 +20,10 @@ export function IconCloud({ icons, images }) {
   const iconCanvasesRef = useRef([]);
   const imagesLoadedRef = useRef([]);
   const ICON_SIZE = 100;
-  
-  const ICON_RADIUS = 80; 
+  // const ICON_RADIUS = ICON_SIZE / 2;
+  const ICON_RADIUS = 80; // Perbesar lingkaran (misal 40 atau 48)
 
-  
+  // Create icon canvases once when icons/images change
   useEffect(() => {
     if (!icons && !images) return;
 
@@ -38,26 +38,26 @@ export function IconCloud({ icons, images }) {
 
       if (offCtx) {
         if (images) {
-         
+          // Handle image URLs directly
           const img = new window.Image();
           img.crossOrigin = "anonymous";
           img.src = items[index];
           img.onload = () => {
             offCtx.clearRect(0, 0, offscreen.width, offscreen.height);
 
-            
+            // Create circular clipping path
             offCtx.beginPath();
             offCtx.arc(20, 20, 20, 0, Math.PI * 2);
             offCtx.closePath();
             offCtx.clip();
 
-            
+            // Draw the image
             offCtx.drawImage(img, 0, 0, 40, 40);
 
             imagesLoadedRef.current[index] = true;
           };
         } else {
-         
+          // Handle SVG icons
           offCtx.scale(0.4, 0.4);
           const svgString = renderToString(item);
           const img = new window.Image();
