@@ -132,7 +132,7 @@ const handleDeleteComment = (commentId) => {
     {
       name: 'Instagram',
       icon: <FaInstagram />,
-      url: 'https://www.instagram.com/_mrkolvr/',
+      url: 'https://www.instagram.com/tortang.tolonggiiis/',
       color: 'from-pink-500 to-purple-600',
       hoverColor: 'hover:shadow-pink-500/25'
     },
