@@ -27,7 +27,7 @@ function App() {
 
   const stats = [
     { icon: <FaCode />, value: "12", title: "TOTAL PROJECTS", description: "Innovative web solutions crafted" },
-    { icon: <FaCertificate />, value: "2", title: "CERTIFICATES", description: "Professional skills validated" },
+    { icon: <FaCertificate />, value: "4", title: "CERTIFICATES", description: "Professional skills validated" },
     { icon: <FaGlobe />, value: "4", title: "YEARS OF EXPERIENCE", description: "Continuous learning journey" },
   ];
 
