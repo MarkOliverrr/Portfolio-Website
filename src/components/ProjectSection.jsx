@@ -78,15 +78,29 @@ const userCertificates = [
         title: "Data Visualization with Python",
         issuer: "KAGGLE",
         date: "April 16,2025",
-        link: "/certificate-images/kaggle.png",
+        link: "https://www.kaggle.com/learn/certification/markolivergurtiza/data-visualization",
         image: "/certificate-images/kaggle.png",
     },
     {
         title: "AWS Academy Graduate - Cloud Foundations",
         issuer: "AWS Academy",
         date: "October 29,2025",
-        link: "/certificate-images/persona.png",
+        link: "https://www.credly.com/badges/9de94135-f024-4878-846e-5848d2c5ae0b",
         image: "/certificate-images/persona.png",
+    },
+    {
+        title: "Kaggle Pandas",
+        issuer: "KAGGLE",
+        date: "March 23,2025",
+        link: "https://www.kaggle.com/learn/certification/markolivergurtiza/pandas",
+        image: "/certificate-images/panda.png",
+    },
+    {
+        title: "Python Essentials 1",
+        issuer: "Cisco Networking Academy",
+        date: "March 24,2026",
+        link: "https://www.credly.com/badges/82e4c7bd-297b-4535-a284-7119c764da45/public_url",
+        image: "/certificate-images/cisco.png",
     }
    
 ];
@@ -242,7 +256,7 @@ const CertificatePreviewModal = ({ certificate, onClose }) => {
                     <div className="mt-6 flex justify-center">
                         <a href={certificate.link} target="_blank" rel="noopener noreferrer" className="group bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 px-8 py-3 rounded-full text-white font-semibold transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-cyan-500/25">
                             <FaDownload className="group-hover:scale-110 transition-transform duration-300" />
-                            <span>Download Certificate</span>
+                            <span>View Certificate</span>
                         </a>
                     </div>
                 </div>
